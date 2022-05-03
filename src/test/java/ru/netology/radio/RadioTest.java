@@ -46,13 +46,23 @@ public class RadioTest {
     void shouldNextRadioStation() {
         Radio radio = new Radio();
 
-        radio.setNextRadioStation(9);
+        radio.setNextRadioStation(7);
+
+        int expected = 8;
+        int actual = radio.getNextRadioStation();
+
+        assertEquals(expected, actual);
+}
+
+    @Test
+    void aboveShouldNextRadioStation() {
+        Radio radio = new Radio();
+
+        radio.setNextRadioStation(11);
 
         int expected = 0;
         int actual = radio.getNextRadioStation();
 
         assertEquals(expected, actual);
     }
-
-
 }
