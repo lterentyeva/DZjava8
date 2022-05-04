@@ -52,7 +52,7 @@ public class RadioTest {
         int actual = radio.getNextRadioStation();
 
         assertEquals(expected, actual);
-}
+    }
 
     @Test
     void aboveShouldNextRadioStation() {
@@ -65,4 +65,91 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldPrevRadioStation() {
+        Radio radio = new Radio();
+
+        radio.setPrevRadioStation(7);
+
+        int expected = 6;
+        int actual = radio.getPrevRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void bellowShouldPrevRadioStation() {
+        Radio radio = new Radio();
+
+        radio.setPrevRadioStation(-7);
+
+        int expected = 9;
+        int actual = radio.getPrevRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldSetCurrentVolume() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(9);
+
+        int expected = 9;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void bellow0SetCurrentVolume() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(-2);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void above10SetCurrentVolume() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(13);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldIncreaseVolume() {
+        Radio radio = new Radio();
+
+        radio.setIncreaseVolume(6);
+
+        int expected = 7;
+        int actual = radio.getIncreaseVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void aboveShouldIncreaseVolume() {
+        Radio radio = new Radio();
+
+        radio.setIncreaseVolume(12);
+
+        int expected = 10;
+        int actual = radio.getIncreaseVolume();
+
+        assertEquals(expected, actual);
+    }
+
+
 }
+
