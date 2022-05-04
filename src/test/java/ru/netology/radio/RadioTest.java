@@ -150,6 +150,28 @@ public class RadioTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldDecreaseVolume() {
+        Radio radio = new Radio();
 
+        radio.setDecreaseVolume(6);
+
+        int expected = 5;
+        int actual = radio.getDecreaseVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void bellowShouldDecreaseVolume() {
+        Radio radio = new Radio();
+
+        radio.setDecreaseVolume(-4);
+
+        int expected = 0;
+        int actual = radio.getDecreaseVolume();
+
+        assertEquals(expected, actual);
+    }
 }
 

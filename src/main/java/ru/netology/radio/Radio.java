@@ -72,4 +72,18 @@ public class Radio {
         }
         this.currentVolume = currentVolume;
     }
+
+    public int getDecreaseVolume() {
+        return currentVolume;
+    }
+
+    public void setDecreaseVolume(int currentVolume) {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
+        if (currentVolume <= 0) {
+            currentVolume = 0;
+        }
+        this.currentVolume = currentVolume;
+    }
 }
